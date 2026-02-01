@@ -7,10 +7,8 @@
 % Hope this resume template helps you land an awesome job. If you found this helpful, please consider starring the github repo here, .
 %-------------------------
 
-
-
 %------------PACKAGES----------------
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage{verbatim} % reimplements the "verbatim" and "verbatim*" environments
 
@@ -35,6 +33,9 @@
 \usepackage[normalem]{ulem} % provides "\ul" (uline) command which will break at line breaks
 
 \usepackage[english]{babel} % provides culturally determined typographical rules for wide range of languages
+
+\setlength {\marginparwidth}{2cm}
+\usepackage{todonotes}
 %-----------------------------------------
 
 \input glyphtounicode % converts glyph names to unicode
@@ -151,26 +152,30 @@
   \begin{itemize}[leftmargin=0.15in, label={}]
 }
 \newcommand{\resumeHeadingListEnd}{\end{itemize}}
+
+\newcommand{\hrefUline}[2]{
+  \href{#1}{\uline{#2}}
+}
 %-------------------------------------------
 
 
 %__________________RESUME____________________
 % You can rearrange sections in any order you may prefer
 \begin{document}
+\setlength{\footskip}{5pt}
 
 %-----------CONTACT DETAILS------------------
 % Make sure all the details are correct, you can add more links in the first row of second column if needed
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Huge Artem Basalaev \vspace{2pt}} & % row = 1, col = 1
-  Location: Budva, Montenegro \\ % row = 1, col = 2
-  %\href{https://jane-doe.com}{\uline{jane-doe.com}} $|$ % row = 2, col = 1
-  \href{https://linkedin.com/in/artem-basalaev}{\uline{LinkedIn}} $|$ % row = 2, col = 1
-  \href{https://gitlab.com/Razorr1996}{\uline{GitLab}} $|$ % row = 2, col = 1
-  \href{https://github.com/Razorr1996}{\uline{GitHub}} $|$ % row = 2, col = 1
-  %\href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
-  Email: \href{mailto:basa62.1996@gmail.com}{\uline{basa62.1996@gmail.com}} $|$ % row = 2, col = 2
-  Mobile: +79819547080 \\ % row = 2, col = 2
+  \textbf{\Huge Igor Vasilevskii} &
+  {Location: Worldwide} \\
+  LinkedIn:\hrefUline{https://linkedin.com/in/igor-vasilevskii}{in/igor-vasilevskii} $|$
+  GitHub:\hrefUline{https://github.com/stevieinc}{@stevieinc} $|$
+  GitLab:\hrefUline{https://gitlab.com/stevieinc}{@stevieinc} \\
+  Email:\hrefUline{mailto:george.vasilevskii@gmail.com}{george.vasilevskii@gmail.com} $|$
+  % Mobile:\hrefUline{tel:+700000000}{+7 000 000-00-00}/\hrefUline{tel:+381000000000}{+381 00 000-000-0} $|$
+  Telegram:\hrefUline{https://t.me/Stevie\_Inc}{@Stevie\_Inc} \\
 \end{tabular*}
 %--------------------------------------------
 
@@ -178,9 +183,12 @@
 %-----------SUMMARY--------------------------
 % Keep this short, simple and straigth to point
 
-\section{DevOps Engineer}
+\section{DevOps/Platform Engineer | SRE}
 \small{
-  TODO I am a highly skilled web developer with over \textbf{3 years of experience} in \textbf{HTML, CSS, JavaScript, and PHP}. I have knowledge of popular frameworks such as \textbf{React, Angular, and Vue.js} and experience with REST APIs and MVC frameworks.
+I'm a highly skilled proactive DevOps engineer with almost \textbf{5 years of experience} in \textbf{Linux, Container Orchestration, CI/CD and some Cloud providers}.
+I have experience working both as the sole engineer on a project/company and as the leader of a small team (up to 5 engineers). I've also worked with both on-premises and cloud infrastructure, building it myself from scratch.
+
+Languages: \textbf{Russian} (Native), \textbf{English} (Upper Intermediate/B2), \textbf{German} (Elementary/A1).
 }
 %--------------------------------------------
 
@@ -190,11 +198,13 @@
 
 \section{Technical Skills}
   \resumeHeadingListStart{}
-    \resumeSectionType{Languages}{:}{JavaScript, PHP, Java, HTML, CSS}
-    \resumeSectionType{Frameworks}{:}{React.js, Angular, Express, Node.js}
-    \resumeSectionType{Libraries}{:}{Material, Redux, React Router}
-    \resumeSectionType{Databases}{:}{MongoDB, PostgreSQL}
-    \resumeSectionType{Dev Tools}{:}{Visual Studio Code, Git, Gitlab}
+    \resumeSectionType{Containers}{:}{Kubernetes, OKD, Helm, Docker}
+    \resumeSectionType{Automation}{:}{Terraform, Terragrunt, GitLab CI/CD, ArgoCD, Ansible, AWX}
+    \resumeSectionType{Cloud}{:}{AWS, K2, Yandex.Cloud}
+    \resumeSectionType{Observability}{:}{Grafana, Prometheus, VictoriaLogs, Vector, Zabbix}
+    \resumeSectionType{Languages}{:}{Python, Bash}
+    \resumeSectionType{Dev Tools}{:}{Git, Docker Compose, VS Code}
+    \resumeSectionType{Data}{:}{PostgreSQL, Patroni, MinIO}
   \resumeHeadingListEnd{}
 %--------------------------------------------
 
@@ -204,25 +214,50 @@
 
 \section{Experience}
 \resumeHeadingListStart{}
-  \resumeQuadHeading{Web Developer}{Apr 2022 -- Present}
-  {Anycompany}{Remote -- AnyCity, Anystate, Anycountry}
+  \resumeQuadHeading{Platform Engineer}{Sep 2024 -- Present}
+  {\hrefUline{https://www.linkedin.com/company/polyus/}{Polyus Digital}}{Remote}
+   \resumeItemListStart{}
+     \resumeItem{Implemented CI/CD Components (GitLab) from scratch to provide as a SaaS.}
+     \resumeItem{Implemented Infrastructure as code practice (IaC) with terraform/terragrunt to manage multiple environments.}
+     \resumeItem{Increased deployment speed for SaaS services in 30 times by different optimization and automation.}
+     \resumeItem{Led interviews/daily meetings/sprint planning/grooming sessions; Developed onboarding process.}
+   \resumeItemListEnd{}
+
+  \resumeQuadHeading{DevOps Lecturer/Mentor}{Jan 2025 -- Jun 2025}
+  {\hrefUline{https://www.linkedin.com/company/teachmeskills/}{TeachMeSkills}}{Remote}
+   \resumeItemListStart{}
+     \resumeItem{Conducted remote classes for students.}
+     \resumeItem{Prepared additional materials to cover blind spots in the curriculum.}
+     \resumeItem{Prepared practical and additional materials for students to practice their skills and gain more knowledge.}
+   \resumeItemListEnd{}
+
+  \resumeQuadHeading{DevOps Senior Analyst }{Mar 2023 -- Sep 2024}
+  {\hrefUline{https://www.linkedin.com/company/axenixpro/}{AXENIX(Ex-Accenture)}}{Remote}
+   \resumeItemListStart{}
+     \resumeItem{Developed cloud(aws-like) infrastructure with IaC practices (Terraform, Docker, GitlabCI) from scratch.}
+     \resumeItem{Deployed and managed self-hosted Kubernetes cluster (Calico, Longhorn/SMB, RBAC).}
+     \resumeItem{Developed GitLab CI/CD templates, ansible roles/playbooks.}
+     \resumeItem{Led IaC team (up to 5 engineers).}
+   \resumeItemListEnd{}
+
+  \resumeQuadHeading{DevOps Engineer}{Jan 2022 -- Jun 2022}
+  {\hrefUline{https://www.linkedin.com/company/llc-neos/}{NEOS} / \hrefUline{https://www.linkedin.com/company/4poker/}{Uptick Poker}} {Hybrid}
+   \resumeItemListStart{}
+     \resumeItem{Migrated from third-party TeamCity instance to self-hosted Gitlab CI/CD to obtaine full control over CI/CD processes.}
+     \resumeItem{Dockerized companys' applications to increase resource isolation, repeatability and simplify deployment processes.}
+     \resumeItem{Developed docker-compose files to ease local development and testing for developers.}
+     \resumeItem{Developed Python scripts for various automation via RestAPI to avoid manual work.}
+     \resumeItem{Verified helm charts.}
+   \resumeItemListEnd{}
+
+  \resumeQuadHeading{System Engineer}{Oct 2020 -- Jan 2022}
+  {\hrefUline{https://www.linkedin.com/company/solanteq/}{Solanteq}}{On-site}
     \resumeItemListStart{}
-      \resumeItem{Designed and developed dynamic and responsive websites using \textbf{HTML, CSS, JavaScript, and PHP}}
-      \resumeItem{Worked with \textbf{REST APIs} to retrieve and display data from databases}
-      \resumeItem{Improved \textbf{website performance} and speed through optimization techniques by \textbf{55\%}}
+      \resumeItem{Maintained company's infrastructure (Cloud \& On-Premise): AWS(EC2, RDS, VPC, Route 53), Linux/Windows-servers, GitLab, YouTrack, TeamCity, Nexus, laptop configuration, office network, etc.}
+      \resumeItem{Developed Ansible Playbooks and Python/Bash scripts for various tasks automation.}
+      \resumeItem{Configured CI/CD templates in TeamCity and business-flow automation in YouTrack.}
     \resumeItemListEnd{}
 
-  \resumeQuadHeading{Backend Developer}{Aug 2021 -- Nov 2022}
-  {Anycompany}{Anycity, Anystate, Anycountry}
-    \resumeItemListStart{}
-      \resumeItem{Worked with \textbf{MVC frameworks} to develop robust and scalable backends}
-      \resumeItem{Troubleshot and \textbf{fixed bugs} and issues in the backend to ensure \textbf{smooth operation} of the applications}
-    \resumeItemListEnd{}
-
-  \resumeQuadHeadingChild{Backend Developer Intern}{Jan 2021 -- Aug 2021}
-    \resumeItemListStart{}
-      \resumeItem{Assisted senior web developers in the design and development of websites using \textbf{HTML, CSS, and JavaScript}}
-    \resumeItemListEnd{}
 \resumeHeadingListEnd{}
 %---------------------------------------------
 
@@ -232,8 +267,17 @@
 
 \section{Education}
   \resumeHeadingListStart{}
-    \resumeQuadHeading{University of Anystate}{Anycity, Anystate, Anycountry}
-    {Bachelor of Science in Computer Science}{Jan 2016 -- Dec 2020}
+    \resumeQuadHeading{Saint Petersburg state university of telecommunications}{}
+    {Master of Science in Computer Science}{Saint Petersburg, Russia}
+      \resumeItemListStart{}
+        \resumeItem{Major: Software Engineering.}
+      \resumeItemListEnd{}
+
+    % \resumeQuadHeading{Saint Petersburg state university of telecommunications}{}
+    % {Bachelor of Science in Engineering}{Saint Petersburg, Russia}
+    %   \resumeItemListStart{}
+    %     \resumeItem{Majors: Electronic Design Engineering.}
+    %   \resumeItemListEnd{}
   \resumeHeadingListEnd{}
 %---------------------------------------------
 
@@ -241,34 +285,32 @@
 %-----------PROJECTS--------------------------
 % Use resumeQuadHeading if four elements are feasible (ex: demo video link), else use resumeTrioHeading. Keep the bullet points simple and concise and try to cover wide variety of skills you have used to build these projects
 
-\section{Projects}
-  \resumeHeadingListStart{}
-    \resumeTrioHeading{\href{https://project1.com}{\uline{Project 1}}}{React.js, Redux, PHP, MySQL Git}{\href{https://proect1.com/source-code/}{\uline{Source Code}}}
-      \resumeItemListStart{}
-        \resumeItem{Designed and developed a clean and modern website using \textbf{HTML, CSS, and JavaScript}}
-        \resumeItem{Optimized website for \textbf{speed and user experience}}
-        \resumeItem{Utilized \textbf{responsive design} to ensure compatibility across all devices}
-        \resumeItem{Deployed on GitHub pages via GitHub Actions}
-      \resumeItemListEnd{}
+% \section{Projects}
+%   \resumeHeadingListStart{}
+%     \resumeTrioHeading{\hrefUline{https://project1.com}{Project 1}}{React.js, Redux, PHP, MySQL Git}{\hrefUline{https://proect1.com/source-code/}{Source Code}}
+%       \resumeItemListStart{}
+%         \resumeItem{Designed and developed a clean and modern website using \textbf{HTML, CSS, and JavaScript}}
+%         \resumeItem{Optimized website for \textbf{speed and user experience}}
+%         \resumeItem{Utilized \textbf{responsive design} to ensure compatibility across all devices}
+%         \resumeItem{Deployed on GitHub pages via GitHub Actions}
+%       \resumeItemListEnd{}
 
-      \resumeTrioHeading{Project 2}{Node.js, Express, JavaScript, Git}{\href{https:project2.com/source-code}{\uline{Source Code}}}
-      \resumeItemListStart{}
-        \resumeItem{A \textbf{CRUD application} exposed using a RESTful API made with Node.js}
-        \resumeItem{Exposed POST, GET, PATCH and DELETE HTTP methods using \textbf{Express}}
-      \resumeItemListEnd{}
-  \resumeHeadingListEnd{}
+%       \resumeTrioHeading{Project 2}{Node.js, Express, JavaScript, Git}{\hrefUline{https:project2.com/source-code}{Source Code}}
+%       \resumeItemListStart{}
+%         \resumeItem{A \textbf{CRUD application} exposed using a RESTful API made with Node.js}
+%         \resumeItem{Exposed POST, GET, PATCH and DELETE HTTP methods using \textbf{Express}}
+%       \resumeItemListEnd{}
+%   \resumeHeadingListEnd{}
 %--------------------------------------------
 
 
 %----------------OTHERS----------------------
 % You can add your acheivements, accolades, certifications etc. here.
 
-\section{Certifications}
-  \resumeItemListStart{}
-    \resumeItem{\href{https://dummy-certification.com}{\uline{Certified Web Developer by the W3C}}}
-    \resumeItem{\href{https://dummy-certification.com}{\uline{Microsoft Certified: Azure Developer Associate}}}
-    \resumeItem{\href{https://dummy-certification.com}{\uline{AWS Certified Developer - Associate}}}
-  \resumeItemListEnd{}
+% \section{Certifications}
+%   \resumeItemListStart{}
+%     \resumeItem{\hrefUline{link}{text}}
+%   \resumeItemListEnd{}
 %--------------------------------------------
 
 \end{document}
